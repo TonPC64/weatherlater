@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html ng-app="app">
+
 <head>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/th.js"></script>
-	<script src="//code.jquery.com/jquery.min.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/locale/th.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="app.js"></script>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <meta charset="utf-8">
-  <title>Weather later</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <title>Weather later</title>
 </head>
+
 <body ng-controller="AppController">
-  
-  	<div class="col-sm-12" ng-repeat="dis in data">
-  	<h1>{{dis.city.name}}</h1>
-	<div class="col-sm-2 item"  ng-repeat="item in dis.list">
-	  <h2>{{formatDate(item.dt)}}</h2>
-		<img ng-src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png" alt="">
-		<p class="weather-description">{{item.weather[0].description}}</p>
-		<h1 class="temp-eve">{{formatTemp(item.temp.eve)}}<span>°C</span></h1>
-	</div>
-	</div>
+    <div class="col-sm-6 dis" ng-repeat="dis in data">
+    	<div class="col-sm-12 ">
+        <div class="jumbotron">
+            <center><h1>{{dis.city.name}}</h1></center>
+        </div>
+        </div>
+        <center>
+        <div class="col-sm-2 item" ng-repeat="item in dis.list">
+
+            <h2>{{formatDate(item.dt)}}</h2>
+            <div class="col-sm-12 ">
+                <img ng-src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png" alt="" />
+            </div>
+            <p class="weather-description">{{item.weather[0].description}}</p>
+            <h1 class="temp-eve">{{formatTemp(item.temp.eve)}}<span>°C</span></h1>
+        </div>
+        </center>
+    </div>
 </body>
+
 </html>

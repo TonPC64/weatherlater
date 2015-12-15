@@ -1,9 +1,12 @@
 .item {
-	border-radius: 3px;
-	border: 1px solid #8CFA70;
+	border-radius: 5px;
+	
 	margin: 10px;
+	background-color:#99CCFF; 
 }
-
+.dis {
+	background-color:#F5F5F5; 
+}
 img {
 	float: left;
 }
@@ -13,9 +16,9 @@ img {
 }
 
 .temp-eve {
-	font-size: 70px;
+	font-size: 50px;
 }
 
 span {
-	font-size: 40px;
+	font-size: 30px;
 }
