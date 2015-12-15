@@ -11,15 +11,18 @@
     <script src="app.js"></script>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <meta charset="utf-8">
-  <title>JS Bin</title>
+  <title>Weather later</title>
 </head>
 <body ng-controller="AppController">
-  <h1>{{data.city.name}}</h1>
-	<div class="col-sm-2 item" ng-repeat="item in data.list">
+  
+  	<div class="col-sm-12" ng-repeat="dis in data">
+  	<h1>{{dis.city.name}}</h1>
+	<div class="col-sm-2 item"  ng-repeat="item in dis.list">
 	  <h2>{{formatDate(item.dt)}}</h2>
 		<img ng-src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png" alt="">
 		<p class="weather-description">{{item.weather[0].description}}</p>
 		<h1 class="temp-eve">{{formatTemp(item.temp.eve)}}<span>°C</span></h1>
+	</div>
 	</div>
 </body>
 </html>
